@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Rescue</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 30px;
+            color: #333333; /* Match template color */
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        .card {
+            border: 1px solid #333333;
+            border-radius: 10px;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 10px;
+            padding-top: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 380px; /* Reduced card height */
+        }
+
+        .card-img-top {
+            max-height: 250px; /* Reduced height */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333333;
+            text-align: center; /* Center align the title */
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .subpage {
+            border: 2px solid #333333;
+            background-color: #f5f5f5;
+            margin: 20px 80px; /* Increased left and right margins */
+            padding: 20px 40px; /* Reduced top and bottom padding */
+            border-radius: 20px;
+        }
+
+        .subpage .card {
+            margin-bottom: 100px; /* Increased bottom margin */
+        }
+
+        .row.justify-content-center {
+            margin: 20px 0; /* Increased margin */
+        }
+
+        .btn-dark {
+            background-color: #333333; /* Match template color */
+            border-color: #333333; /* Match template color */
+            width: 100%;
+            /* Custom styles for upload button */
+            color: #ffffff;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-dark:hover {
+            background-color: #666666; /* Darker template color on hover */
+            border-color: #666666; /* Darker template color on hover */
+        }
+
+        /* New hover effect styles */
+        .card {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .upload-box .card:hover {
+            transform: none; /* Disable the hover effect for upload-box */
+        }
+
+        .card-click-animation {
+            animation-name: cardClick;
+            animation-duration: 0.3s;
+            animation-timing-function: ease;
+        }
+
+        .ingredient-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .ingredient-header h2 {
+            margin: 0;
+        }
+
+        /* Header styles */
+
+        .header {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-buttons .btn {
+            color: #ffffff;
+            background-color: #333333;
+            border-color: #333333;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-buttons .btn:hover {
+            background-color: #666666;
+            border-color: #666666;
+        }
+
+        .light-gray {
+            color: #CCCCCC; /* Replace with the desired light gray color */
+        }
+
+        .toggle-recipes-btn {
+            background-color: #333333;
+            color: #ffffff;
+            border-color: #333333;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-btn,
+        .profile-btn,
+        .dropdown-menu .logout-btn {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            height: 100%; /* Added property */
+            box-sizing: border-box; /* Added property */
+        }
+
+        .logout-btn:hover,
+        .profile-btn:hover,
+        .dropdown-menu .logout-btn:hover {
+            background-color: #666666;
+        }
+
+        .dropdown-menu {
+            background-color: #333333; /* Dark background color */
+        }
+
+        .dropdown-menu .logout-btn {
+            width: 100%;
+            background-color: #333333; /* Dark background color */
+            color: #ffffff;
+        }
+
+        .dropdown-menu .logout-btn:hover {
+            background-color: #666666; /* Darker template color on hover */
+        }
+
+        .profile-btn:hover {
+            background-color: #666666; /* Darker template color on hover */
+        }
+
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+<div class="header">
+    <h1 class="logo light-gray">Food Rescue <i class="fas fa-utensils" style="color: #d9d9d9;"></i></h1>
+    <div class="header-buttons">
+        <a th:if="${loggedInUser}" class="upload-recipe-btn btn btn-dark" href="/">Upload Invoice</a>
+        <a th:if="${loggedInUser}" class="my-ingredients-btn btn btn-dark" href="/myIngredients">My Ingredients</a>
+
+        <div th:if="${loggedInUser}" class="profile-dropdown dropdown">
+            <button class="profile-btn btn btn-dark" type="button" id="profileDropdown" aria-expanded="false">
+                <i class="fas fa-user"></i>
+                <span th:text="${loggedInUser}"></span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                <button class="dropdown-item logout-btn btn btn-dark" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <a th:unless="${loggedInUser}" class="login-btn btn btn-dark" href="/login">Sign in</a>
+        <a th:unless="${loggedInUser}" class="register-btn btn btn-dark" href="/register">Register</a>
+    </div>
+</div>
+
+
+<br>
+<h1 class="text-center">Upload Invoice</h1>
+<div class="upload-box">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="file" class="upload-label">
+                                <span class="upload-icon">&#x1F4C2;</span>
+                                Select PDF File:
+                            </label>
+                            <input type="file" name="file" id="file" accept="application/pdf" class="form-control-file upload-input">
+                        </div>
+                        <button type="submit" class="btn btn-dark">Upload</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<div th:each="api_Ingredient : ${extractedApiIngredients}" class="text-center mb-5">
+    <div th:if="${extractedApiIngredients}" class="subpage">
+        <div class="ingredient-header">
+            <h2 class="mb-3" th:text="${api_Ingredient}"></h2>
+            <button class="toggle-recipes-btn btn btn-dark">+</button>
+        </div>
+
+        <div class="row justify-content-center">
+            <div th:each="recipe : ${recipes}"
+                 th:if="${api_Ingredient eq recipe.Ingredient}" class="col-md-3 recipe-card">
+                <form method="post" th:action="@{'/recipe/' + ${recipe.idMeal}}" class="card mb-3">
+                    <input type="hidden" name="idMeal" th:value="${recipe.idMeal}">
+                    <button type="submit" style="border: none; background: none;">
+                        <img th:src="${recipe.strMealThumb}" alt="Recipe Image" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${recipe.strMeal}"></h5>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+
+    function logout() {
+            window.location.href = "/logout";
+        }
+
+    $(document).ready(function () {
+        $('.profile-btn').click(function () {
+            $('.dropdown-menu').toggleClass('show');
+        });
+
+        $(window).click(function (e) {
+            if (!$('.profile-dropdown').is(e.target) && $('.profile-dropdown').has(e.target).length === 0) {
+                $('.dropdown-menu').removeClass('show');
+            }
+        });
+    });
+
+    const cards = document.querySelectorAll('.card-click-animation');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.add('animate__animated', 'animate__pulse');
+            setTimeout(() => {
+                card.classList.remove('animate__animated', 'animate__pulse');
+            }, 300);
+        });
+    });
+
+    const subpages = document.querySelectorAll('.subpage');
+    subpages.forEach(subpage => {
+        const toggleButton = subpage.querySelector('.toggle-recipes-btn');
+        const recipeCards = subpage.querySelectorAll('.recipe-card');
+        let isShown = false;
+
+        toggleButton.addEventListener('click', () => {
+            isShown = !isShown;
+
+            recipeCards.forEach(recipe => {
+                recipe.style.display = isShown ? 'block' : 'none';
+            });
+
+            toggleButton.textContent = isShown ? '-' : '+';
+
+            // Adjust the subpage height
+            subpage.style.height = isShown ? 'auto' : '100px';
+        });
+
+        // Hide the recipes initially
+        recipeCards.forEach(recipe => {
+            recipe.style.display = 'none';
+        });
+
+        // Set the initial subpage height
+        subpage.style.height = '100px';
+    });
+</script>
+
+</body>
+
+</html>

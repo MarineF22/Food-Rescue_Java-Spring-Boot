@@ -1,0 +1,385 @@
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body-login {
+            background-color: #f9fbfb;
+            color: #333333;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 30px;
+            color: #333333; /* Match template color */
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .card-login {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        .card-title-login {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .centered-text {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .card {
+            border: 1px solid #333333;
+            border-radius: 10px;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 10px;
+            padding-top: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 380px; /* Reduced card height */
+        }
+
+        .card-img-top {
+            max-height: 250px; /* Reduced height */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333333;
+            text-align: center; /* Center align the title */
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .subpage {
+            border: 2px solid #333333;
+            background-color: #f5f5f5;
+            margin: 20px 80px; /* Increased left and right margins */
+            padding: 20px 40px; /* Reduced top and bottom padding */
+            border-radius: 20px;
+        }
+
+        .subpage-recipe {
+            border: 2px solid #333333;
+            background-color: #f5f5f5;
+            margin: 20px auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 60%; /* Adjust the width as needed */
+        }
+
+        .subpage .card {
+            margin-bottom: 100px; /* Increased bottom margin */
+        }
+
+        .row.justify-content-center {
+            margin: 20px 0; /* Increased margin */
+        }
+
+        .btn-dark {
+            background-color: #333333; /* Match template color */
+            border-color: #333333; /* Match template color */
+            width: 100%;
+            /* Custom styles for upload button */
+            color: #ffffff;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-dark:hover {
+            background-color: #666666; /* Darker template color on hover */
+            border-color: #666666; /* Darker template color on hover */
+        }
+
+        /* New hover effect styles */
+        .card {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .upload-box .card:hover {
+            transform: none; /* Disable the hover effect for upload-box */
+        }
+
+        .card-click-animation {
+            animation-name: cardClick;
+            animation-duration: 0.3s;
+            animation-timing-function: ease;
+        }
+
+        .ingredient-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .ingredient-header h2 {
+            margin: 0;
+        }
+
+        /* Header styles */
+
+        .header {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-login {
+          background-color: #333333;
+          color: #ffffff;
+          padding: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-buttons .btn {
+            color: #ffffff;
+            background-color: #333333;
+            border-color: #333333;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-buttons .btn:hover {
+            background-color: #666666;
+            border-color: #666666;
+        }
+
+        .light-gray {
+            color: #CCCCCC; /* Replace with the desired light gray color */
+        }
+
+        .toggle-recipes-btn {
+            background-color: #333333;
+            color: #ffffff;
+            border-color: #333333;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-btn,
+        .profile-btn,
+        .dropdown-menu .logout-btn {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            height: 100%; /* Added property */
+            box-sizing: border-box; /* Added property */
+        }
+
+        .logout-btn-recipe {
+            background-color: #333333; /* Dark background color */
+            color: #ffffff;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Same width as other buttons */
+            height: 100%; /* Same height as profile dropdown */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logout-btn:hover,
+        .profile-btn:hover,
+        .dropdown-menu .logout-btn:hover {
+            background-color: #666666;
+        }
+
+        .logout-btn-recipe:hover {
+            background-color: #666666; /* Darker template color on hover */
+        }
+
+        .dropdown-menu {
+            background-color: #333333; /* Dark background color */
+        }
+
+        .dropdown-menu .logout-btn {
+            width: 100%;
+            background-color: #333333; /* Dark background color */
+            color: #ffffff;
+        }
+
+        .dropdown-menu .logout-btn-recipe {
+            width: 100%; /* Same width as profile dropdown button */
+            text-align: center; /* Center align the button text */
+        }
+
+        .dropdown-menu .logout-btn:hover {
+            background-color: #666666; /* Darker template color on hover */
+        }
+
+        .profile-btn:hover {
+            background-color: #666666; /* Darker template color on hover */
+        }
+
+        .subpage.days-remaining-5 {
+          border-color: red;
+        }
+
+        .expiration-date-day{
+          color: red;
+        }
+
+        .recipe-card {
+            border-radius: 20px;
+        }
+
+        .recipe-card img {
+            display: block;
+            border: 1px solid #333333;
+            margin: 30px auto 0;
+            width: 60%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .recipe-card .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333333;
+            text-align: center; /* Center align the title */
+            margin-top: 20px;
+        }
+
+        .recipe-card .card-text {
+            margin-bottom: 10px;
+        }
+
+        .recipe-card .ingredients-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+
+        .category-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .category-area .card-text {
+            margin-right: 20px;
+        }
+
+        .ingredients-section {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .ingredient-card {
+            height: 240px; /* Adjust the height as needed */
+            margin-bottom: 10px;
+            border: none; /* Remove the border */
+            text-align: center;
+        }
+
+        .ingredient-card img {
+            border: none; /* Remove the border */
+        }
+
+        .card-click-animation {
+            animation-name: cardClick;
+            animation-duration: 0.3s;
+            animation-timing-function: ease;
+        }
+
+        @keyframes cardClick {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }

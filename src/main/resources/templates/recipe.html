@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Rescue</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 30px;
+            color: #333333; /* Match template color */
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+          /* Header styles */
+
+        .header {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-buttons .btn {
+            color: #ffffff;
+            background-color: #333333;
+            border-color: #333333;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-buttons .btn:hover {
+            background-color: #666666;
+            border-color: #666666;
+        }
+
+        .light-gray {
+            color: #CCCCCC; /* Replace with the desired light gray color */
+        }
+
+        .toggle-recipes-btn {
+            background-color: #333333;
+            color: #ffffff;
+            border-color: #333333;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .logout-btn {
+            background-color: #333333; /* Dark background color */
+            color: #ffffff;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Same width as other buttons */
+            height: 100%; /* Same height as profile dropdown */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logout-btn:hover {
+            background-color: #666666; /* Darker template color on hover */
+        }
+
+        .dropdown-menu .logout-btn {
+            width: 100%; /* Same width as profile dropdown button */
+            text-align: center; /* Center align the button text */
+        }
+
+        .toggle-recipes-btn {
+            background-color: #333333;
+            color: #ffffff;
+            border-color: #333333;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .logout-btn {
+            background-color: #333333; /* Dark background color */
+            color: #ffffff;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Same width as other buttons */
+            height: 100%; /* Same height as profile dropdown */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logout-btn:hover {
+            background-color: #666666; /* Darker template color on hover */
+        }
+
+        .dropdown-menu .logout-btn {
+            width: 100%; /* Same width as profile dropdown button */
+            text-align: center; /* Center align the button text */
+        }
+
+        .btn-dark {
+            background-color: #333333; /* Match template color */
+            border-color: #333333; /* Match template color */
+            width: 100%;
+            /* Custom styles for upload button */
+            color: #ffffff;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-dark:hover {
+            background-color: #666666; /* Darker template color on hover */
+            border-color: #666666; /* Darker template color on hover */
+        }
+
+        .subpage {
+            border: 2px solid #333333;
+            background-color: #f5f5f5;
+            margin: 20px auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 60%; /* Adjust the width as needed */
+        }
+
+        .recipe-card {
+            border-radius: 20px;
+        }
+
+        .recipe-card img {
+            display: block;
+            border: 1px solid #333333;
+            margin: 30px auto 0;
+            width: 60%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .recipe-card .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333333;
+            text-align: center; /* Center align the title */
+            margin-top: 20px;
+        }
+
+        .recipe-card .card-text {
+            margin-bottom: 10px;
+        }
+
+        .recipe-card .ingredients-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+
+        .category-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .category-area .card-text {
+            margin-right: 20px;
+        }
+
+        .ingredients-section {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .ingredient-card {
+            height: 240px; /* Adjust the height as needed */
+            margin-bottom: 10px;
+            border: none; /* Remove the border */
+            text-align: center;
+        }
+
+        .ingredient-card img {
+            border: none; /* Remove the border */
+        }
+
+        .card-click-animation {
+            animation-name: cardClick;
+            animation-duration: 0.3s;
+            animation-timing-function: ease;
+        }
+
+        @keyframes cardClick {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1 class="logo light-gray">Food Rescue <i class="fas fa-utensils" style="color: #d9d9d9;"></i></h1>
+    <div class="header-buttons">
+        <a th:if="${loggedInUser}" class="upload-recipe-btn btn btn-dark" href="/">Upload Invoice</a>
+        <a th:if="${loggedInUser}" class="my-ingredients-btn btn btn-dark" href="/myIngredients">My Ingredients</a>
+
+        <div th:if="${loggedInUser}" class="profile-dropdown dropdown">
+            <button class="profile-btn btn btn-dark" type="button" id="profileDropdown" aria-expanded="false">
+                <i class="fas fa-user"></i>
+                <span th:text="${loggedInUser}"></span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                <button class="dropdown-item logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <a th:unless="${loggedInUser}" class="login-btn btn btn-dark" href="/login">Sign in</a>
+        <a th:unless="${loggedInUser}" class="register-btn btn btn-dark" href="/register">Register</a>
+    </div>
+</div>
+
+<br>
+<div class="centered">
+    <h1 class="text-center" th:text="${idContent.strMeal}"></h1>
+</div>
+<div class="subpage card-click-animation">
+    <div class="card recipe-card text-center" th:if="${idContent}">
+        <img class="card-img-top" th:src="${idContent.strMealThumb}" alt="Recipe Thumbnail">
+        <div class="card-body">
+            <div class="category-area">
+                <p class="card-text" style="margin-bottom: 0; font-size: 20px;">
+                    <span class="font-weight-bold">Category:</span>
+                    <span th:text="${idContent.strCategory}"></span>
+                </p>
+                <p class="card-text" style="margin-bottom: 0; font-size: 20px;">
+                    <span class="font-weight-bold">Area:</span>
+                    <span th:text="${idContent.strArea}"></span>
+                </p>
+            </div>
+            <h2 class="card-title" style="font-size: 25px;">Ingredients:</h2>
+            <div class="ingredients-section">
+                <div class="ingredients-list">
+                    <div class="row">
+                        <div class="col-md-3" th:each="i : ${#numbers.sequence(1, 999)}" th:if="${idContent['strIngredient' + i]}">
+                            <div class="card ingredient-card">
+                                <img th:src="'http://www.themealdb.com/images/ingredients/' + ${idContent['strIngredient' + i]} + '.png'" class="card-img-top" alt="Ingredient Image">
+                                <div class="card-body">
+                                    <p>
+                                        <span th:text="${idContent['strIngredient' + i]}"></span>
+                                        <span th:text="' - '"></span>
+                                        <span th:text="${idContent['strMeasure' + i]}"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="card-title" style="font-size: 25px;">Instructions:</h2>
+                <p th:text="${idContent.strInstructions}"></p>
+            </p>
+            <br>
+            <iframe th:if="${idContent.strYoutube}" width="560" height="315" th:src="${'https://www.youtube.com/embed/' + idContent.strYoutube.substring(idContent.strYoutube.lastIndexOf('=') + 1)}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function logout() {
+            window.location.href = "/logout";
+        }
+
+    $(document).ready(function () {
+        $('.profile-btn').click(function () {
+            $('.dropdown-menu').toggleClass('show');
+        });
+
+        $(window).click(function (e) {
+            if (!$('.profile-dropdown').is(e.target) && $('.profile-dropdown').has(e.target).length === 0) {
+                $('.dropdown-menu').removeClass('show');
+            }
+        });
+    });
+
+    // Add click event listener to all cards with class 'card-click-animation'
+    const cards = document.querySelectorAll('.card-click-animation');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.add('animate__animated', 'animate__pulse'); // Add animation classes
+            setTimeout(() => {
+                card.classList.remove('animate__animated', 'animate__pulse'); // Remove animation classes after animation ends
+            }, 300);
+        });
+    });
+
+</script>
+</body>
+</html>

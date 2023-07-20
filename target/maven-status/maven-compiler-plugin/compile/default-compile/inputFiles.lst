@@ -1,0 +1,16 @@
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\DatabasePopulator.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\RecipesApiConnection.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\DataBaseQueries.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\component\UserIngredients.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\controllers\FoodRescue.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\repository\ExpirationDateItemRepository.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\models\ExpirationDateItem.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\component\IngredientsExtractor.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\controllers\UserIngredientsController.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\repository\UsersRepository.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\controllers\RegisterController.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\FoodRescueAppApplication.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\models\Items.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\models\Users.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\repository\ItemsRepository.java
+C:\Users\marine.fournier\IdeaProjects\Project_CGI\FoodRescueApp\src\main\java\com\fournierMarine\cgi\stage\FoodRescueApp\TextProcessor.java

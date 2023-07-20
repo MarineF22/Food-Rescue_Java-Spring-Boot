@@ -1,0 +1,16 @@
+com\fournierMarine\cgi\stage\FoodRescueApp\FoodRescueAppApplication.class
+com\fournierMarine\cgi\stage\FoodRescueApp\models\ExpirationDateItem.class
+com\fournierMarine\cgi\stage\FoodRescueApp\controllers\RegisterController.class
+com\fournierMarine\cgi\stage\FoodRescueApp\DatabasePopulator.class
+com\fournierMarine\cgi\stage\FoodRescueApp\repository\ExpirationDateItemRepository.class
+com\fournierMarine\cgi\stage\FoodRescueApp\models\Users.class
+com\fournierMarine\cgi\stage\FoodRescueApp\models\Items.class
+com\fournierMarine\cgi\stage\FoodRescueApp\TextProcessor.class
+com\fournierMarine\cgi\stage\FoodRescueApp\component\IngredientsExtractor.class
+com\fournierMarine\cgi\stage\FoodRescueApp\RecipesApiConnection.class
+com\fournierMarine\cgi\stage\FoodRescueApp\repository\UsersRepository.class
+com\fournierMarine\cgi\stage\FoodRescueApp\controllers\UserIngredientsController.class
+com\fournierMarine\cgi\stage\FoodRescueApp\component\UserIngredients.class
+com\fournierMarine\cgi\stage\FoodRescueApp\DataBaseQueries.class
+com\fournierMarine\cgi\stage\FoodRescueApp\controllers\FoodRescue.class
+com\fournierMarine\cgi\stage\FoodRescueApp\repository\ItemsRepository.class
